@@ -33,11 +33,13 @@ var CreateContactFormView = Backbone.View.extend({
   events: {
     'submit': 'addContact'
   },
+
   addContact: function(e){
     e.preventDefault();
-    var newContactFirstName = $('#first-name-entry').val();
-    this.collection.create({firstName: newContactFirstName});
-
+    // alert('working here');
+    var firstName = $('#first-name-entry').val();
+    var lastName =
+    this.collection.create({firstName: firstName, lastName: lastName});
     $('#first-name-entry').val('');
   }
 });
