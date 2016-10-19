@@ -1,17 +1,21 @@
-
-// Bootstrap Variables
 $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
-
-// Import Bootstrap
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'https://fonts.googleapis.com/css?family=Raleway|Proza+Libre';
 
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-img {
-  max-width: 100%;
+h1, h2, h3 {
+  font-family: 'Raleway', 'Helvetica', sans-serif;
+}
+
+h1 {
+  font-weight: bolder;
+  text-align: center;
+}
+
+p, span {
+  font-family: 'Proza Libre', 'Garamond', serif;
 }
