@@ -1,6 +1,7 @@
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass/assets/javascripts/bootstrap');
 var Backbone = require('backbone');
+var contactTemplate = require('../templates/templates.hbs');
 
 var ContactListView = Backbone.View.extend({
   tagName: 'ul',
@@ -17,6 +18,7 @@ var ContactListView = Backbone.View.extend({
 var IndividualContactView = Backbone.View.extend({
   tagName: 'li',
   className: 'listed-contact list-group-item',
+  template: contactTemplate,
   initialize: function(){
     this.ListenTo(this.model, 'destroy', this.remove);
     this.ListenTo(this.model, 'changed', this.append);
@@ -36,11 +38,16 @@ var CreateContactFormView = Backbone.View.extend({
 
   addContact: function(e){
     e.preventDefault();
-    // alert('working here');
     var firstName = $('#first-name-entry').val();
-    var lastName =
-    this.collection.create({firstName: firstName, lastName: lastName});
-    $('#first-name-entry').val('');
+    var lastName = $('#last-name-entry').val();
+    var company = $('#company-entry').val();
+    var phoneNumber = $('#phone-number-entry').val();
+    var email = $('#email-entry').val();
+    var birthday = $('#birthday-entry').val();
+
+    this.collection.create({firstName: firstName, lastName: lastName,
+      company: company, phoneNumber: phoneNumber, email: email, birthday: birthday});
+    $('.new-contact-form').trigger('reset');
   }
 });
 
@@ -48,4 +55,4 @@ module.exports = {
   ContactListView: ContactListView,
   IndividualContactView: IndividualContactView,
   CreateContactFormView: CreateContactFormView
-}
+};

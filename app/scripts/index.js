@@ -11,4 +11,6 @@ $(function(){
 
   var contactListVariable = new views.ContactListView({collection: contactCollection});
   $('.app').append(contactListVariable.render().el);
+
+  contactCollection.fetch();
 });
