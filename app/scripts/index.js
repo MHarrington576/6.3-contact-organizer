@@ -9,8 +9,8 @@ $(function(){
   var contactForm = new views.CreateContactFormView({collection: contactCollection});
   contactForm.setElement($('.new-contact-form')[0]);
 
-  var contactListVariable = new views.ContactListView({collection: contactCollection});
-  $('.app').append(contactListVariable.render().el);
+  var contactList = new views.ContactListView({collection: contactCollection});
+  $('.contact-list').append(contactList.render().el);
 
   contactCollection.fetch();
 });

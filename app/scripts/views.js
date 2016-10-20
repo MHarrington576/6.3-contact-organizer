@@ -5,7 +5,10 @@ var contactTemplate = require('../templates/templates.hbs');
 
 var ContactListView = Backbone.View.extend({
   tagName: 'ul',
-  className: 'contact-list col-md-9 list-group',
+  className: 'contact-list-view list-group',
+  initialize: function(){
+    this.listenTo(this.collection, 'create', this.renderNewContact);
+  },
   render: function(){
     return this;
   },
