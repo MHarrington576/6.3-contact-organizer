@@ -3,6 +3,8 @@ require('bootstrap-sass/assets/javascripts/bootstrap');
 var Backbone = require('backbone');
 var contactTemplate = require('../templates/templates.hbs');
 
+console.log(contactTemplate);
+
 var ContactListView = Backbone.View.extend({
   tagName: 'ul',
   className: 'contact-list-view list-group',
