@@ -3,13 +3,13 @@ require('bootstrap-sass/assets/javascripts/bootstrap');
 var Backbone = require('backbone');
 var contactTemplate = require('../templates/templates.hbs');
 
-console.log(contactTemplate);
+// console.log(contactTemplate);
 
 var ContactListView = Backbone.View.extend({
   tagName: 'ul',
   className: 'contact-list-view list-group',
   initialize: function(){
-    this.listenTo(this.collection, 'create', this.renderNewContact);
+    this.listenTo(this.collection, 'add', this.renderNewContact);
   },
   render: function(){
     return this;
@@ -25,8 +25,8 @@ var IndividualContactView = Backbone.View.extend({
   className: 'listed-contact list-group-item',
   template: contactTemplate,
   initialize: function(){
-    this.ListenTo(this.model, 'destroy', this.remove);
-    this.ListenTo(this.model, 'changed', this.append);
+    this.listenTo(this.model, 'destroy', this.remove);
+    // this.ListenTo(this.model, 'changed', this.append);
   },
   render: function(){
     var context = this.model.toJSON();
