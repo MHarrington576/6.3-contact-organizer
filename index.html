@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>My Contacts</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+
+    <div class="app">
+
+      <div class="row">
+        <div class="heading well col-md-12">
+          <h1>My Contacts</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="new-contact-form-div col-md-3">
+          <form class="new-contact-form">
+            <input id="first-name-entry" type="text" placeholder="First name" name="first-name" required/>
+            <input id="last-name-entry" type="text" placeholder="Last name" name="last-name" required/>
+            <input id="company-entry" type="text" placeholder="Company" name="company"/>
+            <input id="phone-number-entry" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="123-456-7890" name="phone-number" required/>
+            <input id="email-entry" type="email" placeholder="Email" name="email"/>
+            <input id="birthday-entry" type="date" name="birthday"/>
+            <button type="submit" value="Create Contact">Create Contact</button>
+          </form>
+        </div>
+
+        <div class="contact-list col-md-9">
+          <!-- Populates with individual contacts from JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
